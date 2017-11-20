@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Navbar from './navbar';
-
 import './app.css';
+
+import Navbar from './navbar';
+import Container from './container';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar />
+          <div className="App">
+            <header className="App-header">
+              <Navbar />
+            </header>
+            <main role="main" className="events-list">
+              <Container />
+            </main>
+          </div>
       </Router>
     );
   }
