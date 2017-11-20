@@ -1,4 +1,4 @@
-# THE PERFECT MEAL [![Build Status](https://travis-ci.org/steffencrespo/the-perfect-meal.svg?branch=master)](https://travis-ci.org/steffencrespo/the-perfect-meal)
+# THE PERFECT MEAL (client side) [![Build Status](https://travis-ci.org/steffencrespo/the-perfect-meal.svg?branch=master)](https://travis-ci.org/steffencrespo/the-perfect-meal)
 ## Tired of wasting food? Embarassed in front of your starving guests? Say no more.
 The Perfect Meal helps you to plan and estimate the appropriate amount of food for your event. You just need to specify the occasion and number of guests. No problem if your family likes to change their mind often, changing an event is as easy as it was to create it in the first place. Give it a try, you are going to love it.
 
