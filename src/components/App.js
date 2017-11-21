@@ -15,7 +15,7 @@ class App extends Component {
               <Navbar />
             </header>
             <main role="main" className="events-list">
-              <Container />
+              <Container name="All your events so far"/>
             </main>
           </div>
       </Router>

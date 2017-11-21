@@ -2,31 +2,17 @@ import React from 'react';
 
 import './container.css';
 
+import EventSummary from './event-summary';
+
 export default function Container(props) {
   return (
     <main role="main" className="events-list">
       <header role="banner">
-        <h1>All your events so far</h1>
+        <h1>{props.name}</h1>
       </header>
       <section>
-        <header>
-          <h2>Thanksgiving Nov 23 2016</h2>
-          <p>Name you entered for the event</p>
-        </header>
-        <p>You had 10 guests</p>
-        <p>For this event you needed 5 gallons of drinks and 12 lbs of food</p>
-        <button>Clone</button>
-        <button>Delete</button>
-      </section>
-      <section>
-        <header>
-          <h2>New Year's Jan 1 2017</h2>
-          <p>Name you entered for the event</p>
-        </header>
-        <p>You had 10 guests</p>
-        <p>For this event you needed 15 gallons of drinks and 20 lbs of food</p>
-        <button>Clone</button>
-        <button>Delete</button>
+        <EventSummary eventType='Thanksgiving' date='Nov 23 2016' name='Night in Philly' guestCount='10' food='1 12lbs turkey' drinks='5 bottles of wine' />
+        <EventSummary eventType='New years' date='Jan 1 2017' name='A very merry xmas' guestCount='10' food='2lbs Lentils, Ham' drinks='5 bottles of wine, 5 dom perrignon' />
       </section>
     </main>
   );
