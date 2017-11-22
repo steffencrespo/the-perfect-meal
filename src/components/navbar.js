@@ -8,7 +8,7 @@ export default function Navbar(props) {
     <nav className="navbar">
       <ul>
         <li><Link to="/events-list">Past Events </Link></li>
-        <li><Link to="#">New Event </Link></li>
+        <li><Link to="/new-event">New Event </Link></li>
         <li style={{ float: 'right' }}><a className="active" href="#about">Logout</a></li>
       </ul>
     </nav>

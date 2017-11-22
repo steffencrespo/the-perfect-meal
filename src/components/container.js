@@ -5,6 +5,7 @@ import './container.css';
 
 import EventsList from './events-list';
 import LandingPage from './landing-page';
+import EventForm from './event-form';
 
 export default function Container(props) {
   return (
@@ -12,6 +13,7 @@ export default function Container(props) {
       <Switch>
         <Route exact path="/" component={ LandingPage } />
         <Route exact path="/events-list" component={ EventsList } />
+        <Route exact path="/new-event" component={ EventForm } />
       </Switch>
     </main>
   );

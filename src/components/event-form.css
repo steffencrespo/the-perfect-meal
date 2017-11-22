@@ -1,0 +1,33 @@
+p {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+p + p {
+  margin-top: 15px;
+}
+
+form {
+  text-align: left;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+input[type='number'] {
+  width: 50px;
+}
+
+.new-event section {
+  padding: 30px 15px;
+}
+
+.events-list section {
+  padding: 30px 15px;
+}
+
+form-section {
+  margin-bottom: 30px;
+}
