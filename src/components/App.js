@@ -12,7 +12,7 @@ class App extends Component {
         <header className="App-header">
           <Navbar />
         </header>
-        <Container name="All your events so far"/>
+        <Container name="all your events so far" />
       </div>
     );
   }
