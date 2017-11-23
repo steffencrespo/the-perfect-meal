@@ -11,6 +11,16 @@ export default function EventForm(props) {
     }
   }
 
+  // ---- Calculating Estimates ----
+  // when the form is filled up, then it calculates the totals for that specific event type
+  // once the calculation is done it renders/rerenders the EventSummary component with the correct values
+
+  // ---- Deleting an event ----
+  // when the delete button is clicked it 
+  // - removes the event from the screen
+  // - redirects to the list of events
+  // - submits the cancel to the backend
+
   return(
     <div>
       <header>
