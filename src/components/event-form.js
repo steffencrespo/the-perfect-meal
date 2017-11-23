@@ -10,7 +10,7 @@ export default function EventForm(props) {
       <section>
         <form id="create-party">
           <div className="form-section">
-            <p>Name your event</p>
+            <label htmlFor="party-name">Name your event</label>
             <input type="text" name="party-name" placeholder="name this event" required />
           </div>
           <div className="form-section">
@@ -18,14 +18,14 @@ export default function EventForm(props) {
             <textarea name="event-summary" rows="5" placeholder="Uncle Ben is vegan. Aunt Annie likes whiskey."  required></textarea>
           </div>
           <div className="form-section">
-            <p>What is the occasion?</p>
+            <label htmlFor="party-type">What is the occasion?</label>
             <select name="party-type">
               <option value="thanksgiving">Thanksgiving</option>
               <option value="easter">Easter</option>
             </select> 
           </div>
           <div className="form-section">
-            <p>How many guests are coming?</p>
+            <label htmlFor="party-guests">How many guests are coming?</label>
             <input type="number" name="party-guests" min="0" max="999" required />
           </div>
         </form>
