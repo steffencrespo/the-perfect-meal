@@ -1,7 +1,16 @@
 import React from 'react';
 import './event-form.css';
 
+import EventSummary from './event-summary';
+
 export default function EventForm(props) {
+
+  function showEstimates() {
+    if (true) {
+      return <EventSummary eventType='Thanksgiving' date='Nov 23 2017' name='Last time in Philly' guestCount='5' food='1 12lbs turkey' drinks='2 bottles of wine' />;
+    }
+  }
+
   return(
     <div>
       <header>
@@ -30,18 +39,7 @@ export default function EventForm(props) {
           </div>
         </form>
       </section>
-      <section>
-        <header>
-          <h3>You are going to need</h3>
-          <p>12 lbs of Turkey</p>
-          <p>5 gallons of drinks</p>
-        </header>
-      </section>
-      <section>
-        <button type="cancel">Cancel</button>
-        <button type="submit">Save</button>
-        <button type="cancel">Delete</button>
-      </section>
+      {showEstimates()}
     </div>
   );
 }
