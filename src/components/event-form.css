@@ -1,12 +1,3 @@
-p {
-  margin: 0;
-  max-width: 650px;
-}
-
-p + p {
-  margin-top: 15px;
-}
-
 form {
   text-align: left;
 }
