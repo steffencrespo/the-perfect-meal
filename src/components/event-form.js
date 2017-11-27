@@ -11,17 +11,16 @@ export class EventForm extends Component {
   }
 
   showEstimates() {
+    const event = this.props.events[0];
     if (true) {
-      const events = this.props.events.map((event, index) =>
-        <EventSummary 
-          eventType={event.eventType} 
-          date='Nov 23 2017'
-          name={event.partyName} 
-          guestCount={event.partyGuests} 
-          food='1 12lbs turkey' 
-          drinks='2 bottles of wine' />
-      );
-      return events;
+      return(
+              <EventSummary 
+                eventType={event.eventType} 
+                date='Nov 23 2017'
+                name={event.partyName} 
+                guestCount={event.partyGuests} 
+                food='1 12lbs turkey' 
+                drinks='2 bottles of wine' />);
     }
   }
 
