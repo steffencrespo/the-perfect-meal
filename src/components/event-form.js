@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './event-form.css';
 
 import EventSummary from './event-summary';
+import { addEvent } from '../actions';
 
-export default class EventForm extends Component {
+export class EventForm extends Component {
   constructor(props) {
     super(props);
   }
 
   showEstimates() {
     if (true) {
-      return <EventSummary eventType='Thanksgiving' date='Nov 23 2017' name='Last time in Philly' guestCount='5' food='1 12lbs turkey' drinks='2 bottles of wine' />;
+      const events = this.props.events.map((event, index) =>
+        <EventSummary 
+          eventType={event.eventType} 
+          date='Nov 23 2017'
+          name={event.partyName} 
+          guestCount={event.partyGuests} 
+          food='1 12lbs turkey' 
+          drinks='2 bottles of wine' />
+      );
+      return events;
     }
   }
 
@@ -64,3 +75,9 @@ export default class EventForm extends Component {
       );
     }
 }
+
+const mapStateToProps = state => ({
+  events: state.events
+});
+
+export default connect(mapStateToProps)(EventForm);

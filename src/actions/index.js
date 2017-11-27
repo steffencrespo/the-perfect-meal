@@ -1,8 +1,8 @@
 export const ADD_EVENT = 'ADD_EVENT';
-export const addEvent = (name, summary, eventType, guests) => ({
+export const addEvent = (partyName, eventSummary, eventType, partyGuests) => ({
   type: ADD_EVENT,
-  name,
-  summary,
+  partyName,
+  eventSummary,
   eventType,
-  guests
+  partyGuests
 });
