@@ -36,7 +36,14 @@ export class EventForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.input.value);
+    const partyInfo = {
+      partyName: this.partyName.value,
+      eventSummary: this.eventSummary.value,
+      eventType: this.eventType.value,
+      partyGuests: this.partyGuests.value
+    }
+
+    this.props.dispatch(addEvent(partyInfo.partyName, partyInfo.eventSummary, partyInfo.eventType, partyInfo.partyGuests))
   }
 
   render() {
@@ -49,22 +56,25 @@ export class EventForm extends Component {
             <form id="create-party" onSubmit={ e => this.handleSubmit(e) } >
               <div className="form-section">
                 <label htmlFor="party-name">Name your event</label>
-                <input type="text" name="party-name" placeholder="name this event" required />
+                <input type="text" name="party-name" placeholder="name this event" required ref={ (input) => this.partyName = input } />
               </div>
               <div className="form-section">
                 <label htmlFor="event-summary">Add your notes</label>
-                <textarea name="event-summary" rows="5" placeholder="Uncle Ben is vegan. Aunt Annie likes whiskey."  required></textarea>
+                <textarea name="event-summary" rows="5" 
+                  placeholder="Uncle Ben is vegan. Aunt Annie likes whiskey." 
+                  required ref={ (textarea) => this.eventSummary = textarea } >
+                </textarea>
               </div>
               <div className="form-section">
                 <label htmlFor="party-type">What is the occasion?</label>
-                <select name="party-type">
+                <select name="party-type" ref={ (option) => this.eventType = option } >
                   <option value="thanksgiving">Thanksgiving</option>
                   <option value="easter">Easter</option>
                 </select> 
               </div>
               <div className="form-section">
                 <label htmlFor="party-guests">How many guests are coming?</label>
-                <input type="number" name="party-guests" min="0" max="999" required ref={ (input) => this.input = input } />
+                <input type="number" name="party-guests" min="0" max="999" required ref={ (input) => this.partyGuests = input } />
                 <input type="submit" value="Submit" />
               </div>
             </form>

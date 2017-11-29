@@ -10,7 +10,9 @@ const initialState = {
 };
 
 export const eventReducer = (state = initialState, action) => {
+  console.log('here');
   if(action.type === actions.ADD_EVENT) {
+    console.log(action);
     return Object.assign({}, state, {
       events: [...state.events, {
         partyName: action.partyName,
