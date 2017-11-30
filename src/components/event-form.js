@@ -55,6 +55,13 @@ export class EventForm extends Component {
           <section>
             <form id="create-party" onSubmit={ e => this.handleSubmit(e) } >
               <div className="form-section">
+                <label htmlFor="party-type">What is the occasion?</label>
+                <select name="party-type" ref={ (option) => this.eventType = option } >
+                  <option value="thanksgiving">Thanksgiving</option>
+                  <option value="easter">Easter</option>
+                </select> 
+              </div>
+              <div className="form-section">
                 <label htmlFor="party-name">Name your event</label>
                 <input type="text" name="party-name" placeholder="name this event" required ref={ (input) => this.partyName = input } />
               </div>
@@ -64,13 +71,6 @@ export class EventForm extends Component {
                   placeholder="Uncle Ben is vegan. Aunt Annie likes whiskey." 
                   required ref={ (textarea) => this.eventSummary = textarea } >
                 </textarea>
-              </div>
-              <div className="form-section">
-                <label htmlFor="party-type">What is the occasion?</label>
-                <select name="party-type" ref={ (option) => this.eventType = option } >
-                  <option value="thanksgiving">Thanksgiving</option>
-                  <option value="easter">Easter</option>
-                </select> 
               </div>
               <div className="form-section">
                 <label htmlFor="party-guests">How many guests are coming?</label>
