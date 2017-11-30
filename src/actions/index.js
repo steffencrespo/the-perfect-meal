@@ -6,3 +6,9 @@ export const addEvent = (partyName, eventSummary, eventType, partyGuests) => ({
   eventType,
   partyGuests
 });
+
+export const DELETE_EVENT = 'DELETE_EVENT';
+export const deleteEvent = (id) => ({
+  type: DELETE_EVENT,
+  id
+});

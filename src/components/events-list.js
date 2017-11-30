@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import EventSummary from './event-summary';
@@ -8,9 +8,9 @@ import './events-list.css';
 export class EventsList extends Component  {
 
   render() {  
-    const allEvents = this.props.events.map((event, index) => 
+    const allEvents = this.props.events.map((event) => 
       <EventSummary 
-        key={index}
+        key={event.id}
         eventType={event.eventType} 
         date='Nov 23 2017'
         name={event.partyName} 
