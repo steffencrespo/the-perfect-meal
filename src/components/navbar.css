@@ -1,4 +1,4 @@
-nav {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,10 @@ ul {
 
 li {
     float: left;
+}
+
+li i {
+  margin-right: 3px;
 }
 
 li a {
