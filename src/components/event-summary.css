@@ -1,0 +1,4 @@
+.flex_summary_header {
+  display: flex;
+  flex-direction: column;
+}
