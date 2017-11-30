@@ -21,7 +21,7 @@ export default function LandingPage(props) {
       </header>
       <p>[<em>placeholder for screenshot of meal calculation</em>]</p>
       <p>Whether it is Thanksgiving, Hanukkah or Christmas, Easter or Pesah, fear no more mistakes.
-      Simply chose the occation, enter the amount of guests your party is going to have, tune the types of food you want to serve and you will instantly get an estimate of how much you need to buy. Easier than googling every time.
+      Simply chose the occasion, enter the amount of guests your party is going to have, tune the types of food you want to serve and you will instantly get an estimate of how much you need to buy. Easier than googling every time.
       </p>
     </section>
     <section>
