@@ -4,7 +4,7 @@ import './event-summary.css';
 
 export default function EventSummary(props) {
   return (
-    <section>
+    <section key={ props.index }>
       <header>
         <h2>{ props.eventType } - { props.date }</h2>
         <p>{ props.name }</p>

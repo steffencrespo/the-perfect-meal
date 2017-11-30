@@ -8,8 +8,9 @@ import './events-list.css';
 export class EventsList extends Component  {
 
   render() {  
-    const allEvents = this.props.events.map((event) => 
+    const allEvents = this.props.events.map((event, index) => 
       <EventSummary 
+        key={index}
         eventType={event.eventType} 
         date='Nov 23 2017'
         name={event.partyName} 
