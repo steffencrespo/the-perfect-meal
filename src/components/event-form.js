@@ -12,7 +12,7 @@ export class EventForm extends Component {
 
   showEstimates() {
     const event = this.props.events[0];
-    if (true) {
+    if (event !== undefined) {
       return(
               <EventSummary 
                 eventType={event.eventType} 
@@ -53,7 +53,7 @@ export class EventForm extends Component {
             <h1>Let's Have a Party</h1>
           </header>
           <section>
-            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } >
+            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } onChange={ () => console.log('asdasd') }>
               <div className="form-section">
                 <label htmlFor="party-type">What is the occasion?</label>
                 <select name="party-type" ref={ (option) => this.eventType = option } >
