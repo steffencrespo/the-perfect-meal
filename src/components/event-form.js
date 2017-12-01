@@ -11,7 +11,7 @@ export class EventForm extends Component {
   }
 
   showEstimates() {
-    const event = this.props.events[0];
+    const event = this.props.unsavedEvent;
     if (event !== undefined) {
       return(
               <EventSummary 
@@ -96,7 +96,8 @@ export class EventForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  unsavedEvent: state.unsavedEvent
 });
 
 export default connect(mapStateToProps)(EventForm);

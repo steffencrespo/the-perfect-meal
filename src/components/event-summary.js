@@ -19,4 +19,8 @@ export function EventSummary(props) {
   );
 }
 
+const mapStateToProps = state => ({
+  editing: state.editing
+});
+
 export default connect()(EventSummary);
