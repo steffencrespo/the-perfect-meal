@@ -12,3 +12,9 @@ export const deleteEvent = (id) => ({
   type: DELETE_EVENT,
   id
 });
+
+export const EDITING_EVENT = 'EDITING_EVENT';
+export const editingEvent = () => ({
+  type: EDITING_EVENT,
+  editing: true
+});

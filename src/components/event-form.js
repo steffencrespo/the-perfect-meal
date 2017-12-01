@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './event-form.css';
 
 import EventSummary from './event-summary';
-import { addEvent } from '../actions';
+import { addEvent, editingEvent } from '../actions';
 
 export class EventForm extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ export class EventForm extends Component {
             <h1>Let's Have a Party</h1>
           </header>
           <section>
-            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } onChange={ () => console.log('asdasd') }>
+            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } onChange={ () => this.props.dispatch(editingEvent()) }>
               <div className="form-section">
                 <label htmlFor="party-type">What is the occasion?</label>
                 <select name="party-type" ref={ (option) => this.eventType = option } >

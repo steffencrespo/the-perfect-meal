@@ -7,7 +7,8 @@ const initialState = {
     'eventSummary': 'This is the most wonderful time of the year.',
     'eventType': 'Thanksgiving',
     'partyGuests': 5
-  }]
+  }],
+  editing: false
 };
 
 export const eventReducer = (state = initialState, action) => {
@@ -29,6 +30,10 @@ export const eventReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       events: [...state.events.filter( event => event.id === action.id)]
     })
+  }
+  else if (action.type === actions.EDITING_EVENT) {
+    console.log(action);
+    return Object.assign({}, state, { editing: true })
   }
   return state;
 }
