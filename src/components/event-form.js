@@ -46,6 +46,16 @@ export class EventForm extends Component {
     this.props.dispatch(addEvent(partyInfo.partyName, partyInfo.eventSummary, partyInfo.eventType, partyInfo.partyGuests))
   }
 
+  handleEventInProgress() {
+    const partyInfo = {
+      partyName: this.partyName.value,
+      eventSummary: this.eventSummary.value,
+      eventType: this.eventType.value,
+      partyGuests: this.partyGuests.value
+    }
+    this.props.dispatch(editingEvent(partyInfo.partyName, partyInfo.eventSummary, partyInfo.eventType, partyInfo.partyGuests))
+  }
+
   render() {
       return(
         <div>
@@ -53,7 +63,7 @@ export class EventForm extends Component {
             <h1>Let's Have a Party</h1>
           </header>
           <section>
-            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } onChange={ () => this.props.dispatch(editingEvent()) }>
+            <form id="create-party" onSubmit={ e => this.handleSubmit(e) } onChange={ () =>  this.handleEventInProgress() }>
               <div className="form-section">
                 <label htmlFor="party-type">What is the occasion?</label>
                 <select name="party-type" ref={ (option) => this.eventType = option } >
