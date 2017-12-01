@@ -14,7 +14,11 @@ export const deleteEvent = (id) => ({
 });
 
 export const EDITING_EVENT = 'EDITING_EVENT';
-export const editingEvent = () => ({
+export const editingEvent = (partyName='', eventSummary='', eventType='', partyGuests=0) => ({
   type: EDITING_EVENT,
-  editing: true
+  editing: true,
+  partyName,
+  eventSummary,
+  eventType,
+  partyGuests
 });

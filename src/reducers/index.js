@@ -8,7 +8,14 @@ const initialState = {
     'eventType': 'Thanksgiving',
     'partyGuests': 5
   }],
-  editing: false
+  editing: false,
+  unsavedEvent: {
+    'id': '0',
+    'partyName': '',
+    'eventSummary': '',
+    'eventType': '',
+    'partyGuests': 0
+  }
 };
 
 export const eventReducer = (state = initialState, action) => {
@@ -33,7 +40,16 @@ export const eventReducer = (state = initialState, action) => {
   }
   else if (action.type === actions.EDITING_EVENT) {
     console.log(action);
-    return Object.assign({}, state, { editing: true })
+    console.log(state.unsavedEvent);
+    return Object.assign({}, state, { 
+      editing: true, 
+      unsavedEvent: {
+        partyName: action.partyName,
+        eventSummary: action.eventSummary,
+        eventType: action.eventType,
+        partyGuests: action.partyGuests
+      } 
+    });
   }
   return state;
 }
