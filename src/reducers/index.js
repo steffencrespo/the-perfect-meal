@@ -25,10 +25,10 @@ export const eventReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       events: [...state.events, {
         id: Math.floor((1 + Math.random()) * 0x10000),
-        partyName: action.partyName,
-        eventSummary: action.eventSummary,
-        eventType: action.eventType,
-        partyGuests: action.partyGuests
+        partyName: state.unsavedEvent.partyName,
+        eventSummary: state.unsavedEvent.eventSummary,
+        eventType: state.unsavedEvent.eventType,
+        partyGuests: state.unsavedEvent.partyGuests
       }]
     });
   }
