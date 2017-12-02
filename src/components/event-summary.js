@@ -13,7 +13,7 @@ export function EventSummary(props) {
       </header>
       <p> Guests: { props.guestCount }</p>
       <p>For this event you needed { props.drinks } drinks and { props.food } of food</p>
-      <button hidden={props.editing}>Save</button>
+      <button hidden={!props.editing}>Save</button>
       <button onClick={ () => props.dispatch(deleteEvent(props.id))} >Delete</button>
     </section>
   );
