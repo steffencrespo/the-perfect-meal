@@ -6,7 +6,7 @@ import './event-summary.css';
 
 export function EventSummary(props) {
   return (
-    <section key={ props.id }>
+    <section id={ props.id }>
       <header className="flex_summary_header">
         <h2>{ props.eventType } - { props.date }</h2>
         <p>{ props.name }</p>

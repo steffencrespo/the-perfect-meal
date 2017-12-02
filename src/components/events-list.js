@@ -10,6 +10,7 @@ export class EventsList extends Component  {
   render() {  
     const allEvents = this.props.events.map((event) => 
       <EventSummary 
+        id={event.id}
         key={event.id}
         eventType={event.eventType} 
         date='Nov 23 2017'
