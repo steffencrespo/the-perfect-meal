@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteEvent } from '../actions';
+import { addEvent, deleteEvent } from '../actions';
 
 import './event-summary.css';
 
@@ -13,14 +13,30 @@ export function EventSummary(props) {
       </header>
       <p> Guests: { props.guestCount }</p>
       <p>For this event you needed { props.drinks } drinks and { props.food } of food</p>
-      <button hidden={!props.editing}>Save</button>
-      <button onClick={ () => props.dispatch(deleteEvent(props.id))} >Delete</button>
+      <button 
+        hidden={!props.editing} 
+        onClick={ () => 
+          props.dispatch(
+            addEvent(
+              props.unsavedEvent.partyName, 
+              props.unsavedEvent.eventSummary, 
+              props.unsavedEvent.eventType, 
+              props.unsavedEvent.partyGuests)) 
+        }>Save
+        </button>
+      <button 
+        onClick={ () => 
+          props.dispatch(
+          deleteEvent(props.id))
+        } >Delete
+      </button>
     </section>
   );
 }
 
 const mapStateToProps = state => ({
-  editing: state.editing
+  editing: state.editing,
+  unsavedEvent: state.unsavedEvent
 });
 
 export default connect(mapStateToProps)(EventSummary);
