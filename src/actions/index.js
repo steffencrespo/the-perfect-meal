@@ -22,3 +22,8 @@ export const editingEvent = (partyName='', eventSummary='', eventType='', partyG
   eventType,
   partyGuests
 });
+
+export const DISABLE_EDITING = 'DISABLE_EDITING';
+export const disableEditing = () => ({
+  type: DISABLE_EDITING
+});

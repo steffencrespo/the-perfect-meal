@@ -52,5 +52,11 @@ export const eventReducer = (state = initialState, action) => {
       } 
     });
   }
+  else if (action.type === actions.DISABLE_EDITING) {
+    return Object.assign({}, state, {
+      editing: false,
+      unsavedEvent: {}
+    });
+  }
   return state;
 }
