@@ -73,7 +73,6 @@ export class EventForm extends Component {
               <div className="form-section">
                 <label htmlFor="party-guests">How many guests are coming?</label>
                 <input type="number" name="party-guests" min="0" max="999" required ref={ (input) => this.partyGuests = input } />
-                <input type="submit" value="Submit" />
               </div>
             </form>
           </section>
