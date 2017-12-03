@@ -34,8 +34,9 @@ export const eventReducer = (state = initialState, action) => {
   }
   else if (action.type === actions.DELETE_EVENT) {
     console.log(action);
+    console.log(action.id);
     return Object.assign({}, state, {
-      events: [...state.events.filter( event => event.id === action.id)]
+      events: [...state.events.filter( event => event.id !== action.id)]
     })
   }
   else if (action.type === actions.EDITING_EVENT) {
