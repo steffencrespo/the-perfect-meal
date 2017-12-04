@@ -5,6 +5,16 @@ import { addEvent, deleteEvent } from '../actions';
 import './event-summary.css';
 
 export function EventSummary(props) {
+
+  function saveEvent() {
+    props.dispatch(
+      addEvent(
+        props.unsavedEvent.partyName, 
+        props.unsavedEvent.eventSummary, 
+        props.unsavedEvent.eventType, 
+        props.unsavedEvent.partyGuests));
+  }
+
   return (
     <section id={ props.id }>
       <header className="flex_summary_header">
@@ -16,12 +26,7 @@ export function EventSummary(props) {
       <button 
         hidden={!props.editing} 
         onClick={ () => 
-          props.dispatch(
-            addEvent(
-              props.unsavedEvent.partyName, 
-              props.unsavedEvent.eventSummary, 
-              props.unsavedEvent.eventType, 
-              props.unsavedEvent.partyGuests)) 
+          saveEvent() 
         }>Save
         </button>
       <button 
