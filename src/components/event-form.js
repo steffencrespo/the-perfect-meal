@@ -20,7 +20,9 @@ export class EventForm extends Component {
                 name={event.partyName} 
                 guestCount={event.partyGuests} 
                 food='1 12lbs turkey' 
-                drinks='2 bottles of wine' />);
+                drinks='2 bottles of wine' 
+                history={this.props.history}
+              />);
     }
   }
 

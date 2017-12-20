@@ -13,6 +13,7 @@ export function EventSummary(props) {
         props.unsavedEvent.eventSummary, 
         props.unsavedEvent.eventType, 
         props.unsavedEvent.partyGuests));
+    props.history.push("/events-list");
   }
 
   return (
@@ -23,17 +24,8 @@ export function EventSummary(props) {
       </header>
       <p> Guests: { props.guestCount }</p>
       <p>For this event you needed { props.drinks } drinks and { props.food } of food</p>
-      <button 
-        hidden={!props.editing} 
-        onClick={ () => 
-          saveEvent() 
-        }>Save
-        </button>
-      <button 
-        onClick={ () => 
-          props.dispatch(
-          deleteEvent(props.id))
-        } >Delete
+      <button hidden={!props.editing} onClick={() => saveEvent()}>Save</button>
+      <button onClick={() => props.dispatch(deleteEvent(props.id))} >Delete
       </button>
     </section>
   );
