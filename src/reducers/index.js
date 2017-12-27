@@ -19,7 +19,6 @@ const initialState = {
 };
 
 export const eventReducer = (state = initialState, action) => {
-  console.log('here');
   if (action.type === actions.ADD_EVENT) {
     console.log(action);
     return Object.assign({}, state, {
@@ -40,8 +39,6 @@ export const eventReducer = (state = initialState, action) => {
     })
   }
   else if (action.type === actions.EDITING_EVENT) {
-    console.log(action);
-    console.log(state.unsavedEvent);
     return Object.assign({}, state, { 
       editing: true, 
       unsavedEvent: {
