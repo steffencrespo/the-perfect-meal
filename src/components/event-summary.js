@@ -12,7 +12,10 @@ export function EventSummary(props) {
         props.unsavedEvent.partyName, 
         props.unsavedEvent.eventSummary, 
         props.unsavedEvent.eventType, 
-        props.unsavedEvent.partyGuests));
+        props.unsavedEvent.partyGuests,
+        props.unsavedEvent.totalFood,
+        props.unsavedEvent.totalDrinks
+      ));
     props.history.push("/events-list");
   }
 

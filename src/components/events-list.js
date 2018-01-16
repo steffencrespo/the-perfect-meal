@@ -16,8 +16,8 @@ export class EventsList extends Component  {
         date='Nov 23 2017'
         name={event.partyName} 
         guestCount={event.partyGuests} 
-        food='1 12lbs turkey' 
-        drinks='2 bottles of wine' />
+        food={event.totalFood}
+        drinks={event.totalDrinks} />
     );
 
     return(

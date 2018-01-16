@@ -19,8 +19,8 @@ export class EventForm extends Component {
                 date='Nov 23 2017'
                 name={event.partyName} 
                 guestCount={event.partyGuests} 
-                food='1 12lbs turkey' 
-                drinks='2 bottles of wine' 
+                food={event.totalFood}
+                drinks={event.totalDrinks}
                 history={this.props.history}
               />);
     }
@@ -41,9 +41,11 @@ export class EventForm extends Component {
       partyName: this.partyName.value,
       eventSummary: this.eventSummary.value,
       eventType: this.eventType.value,
-      partyGuests: this.partyGuests.value
+      partyGuests: this.partyGuests.value,
+      food: this.totalFood,
+      drinks: this.totalDrinks
     }
-    this.props.dispatch(editingEvent(partyInfo.partyName, partyInfo.eventSummary, partyInfo.eventType, partyInfo.partyGuests))
+    this.props.dispatch(editingEvent(partyInfo.partyName, partyInfo.eventSummary, partyInfo.eventType, partyInfo.partyGuests, partyInfo.food, partyInfo.drinks))
   }
 
   render() {

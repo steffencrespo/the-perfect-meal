@@ -27,7 +27,9 @@ export const eventReducer = (state = initialState, action) => {
         partyName: state.unsavedEvent.partyName,
         eventSummary: state.unsavedEvent.eventSummary,
         eventType: state.unsavedEvent.eventType,
-        partyGuests: state.unsavedEvent.partyGuests
+        partyGuests: state.unsavedEvent.partyGuests,
+        totalFood: state.unsavedEvent.totalFood,
+        totalDrinks: state.unsavedEvent.totalDrinks
       }]
     });
   }
@@ -45,7 +47,9 @@ export const eventReducer = (state = initialState, action) => {
         partyName: action.partyName,
         eventSummary: action.eventSummary,
         eventType: action.eventType,
-        partyGuests: action.partyGuests
+        partyGuests: action.partyGuests,
+        totalFood: action.partyGuests*0.34,
+        totalDrinks: action.partyGuests*1.33
       } 
     });
   }
