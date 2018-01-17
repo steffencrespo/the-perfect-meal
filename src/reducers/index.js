@@ -49,8 +49,8 @@ export const eventReducer = (state = initialState, action) => {
         eventSummary: action.eventSummary,
         eventType: action.eventType,
         partyGuests: action.partyGuests,
-        totalFood: action.partyGuests*0.34,
-        totalDrinks: action.partyGuests*1.33
+        totalFood: calculateTotalFood(action.partyGuests),
+        totalDrinks: calculateTotalDrinks(action.partyGuests)
       } 
     });
   }
@@ -61,4 +61,12 @@ export const eventReducer = (state = initialState, action) => {
     });
   }
   return state;
+}
+
+const calculateTotalFood = (guests) => {
+  return `${guests*1} lbs of food`;
+}
+
+const calculateTotalDrinks = (guests) => {
+  return `${guests*1} drinks per hour`;
 }
