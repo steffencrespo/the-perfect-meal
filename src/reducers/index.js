@@ -6,7 +6,9 @@ const initialState = {
     'partyName': 'Create your own party',
     'eventSummary': 'This is the most wonderful time of the year.',
     'eventType': 'Thanksgiving',
-    'partyGuests': 5
+    'partyGuests': 5,
+    'totalFood': '5 lbs of food',
+    'totalDrinks': '5 drinks per hour'
   }],
   editing: false,
   unsavedEvent: {
