@@ -51,8 +51,8 @@ export const eventReducer = (state = initialState, action) => {
         eventSummary: action.eventSummary,
         eventType: action.eventType,
         partyGuests: action.partyGuests,
-        totalFood: calculateTotalFood(action.partyGuests),
-        totalDrinks: calculateTotalDrinks(action.partyGuests)
+        totalFood: calculateMealEstimate(action.eventType, action.partyGuests).food,
+        totalDrinks: calculateMealEstimate(action.eventType, action.partyGuests).drinks
       } 
     });
   }
@@ -65,10 +65,14 @@ export const eventReducer = (state = initialState, action) => {
   return state;
 }
 
-const calculateTotalFood = (guests) => {
-  return `${guests*1} lbs of food`;
+const calculateMealEstimate = (eventType, guests) => {
+  return thanksgivingEstimate(guests);
 }
 
-const calculateTotalDrinks = (guests) => {
-  return `${guests*1} drinks per hour`;
+const easterEstimate = (guests) => {
+  return {food: `${guests*1} lbs of food for rabbit`, drinks: `${guests*1} per hour`};
+}
+
+const thanksgivingEstimate = (guests) => {
+  return {food: `${guests*1} lbs of food for thanks`, drinks: `${guests*1} per hour`};
 }
