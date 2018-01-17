@@ -22,6 +22,7 @@ export const eventReducer = (state = initialState, action) => {
   if (action.type === actions.ADD_EVENT) {
     console.log(action);
     return Object.assign({}, state, {
+      editing: false,
       events: [...state.events, {
         id: Math.floor((1 + Math.random()) * 0x10000),
         partyName: state.unsavedEvent.partyName,
