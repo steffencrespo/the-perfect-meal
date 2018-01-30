@@ -65,14 +65,21 @@ export const eventReducer = (state = initialState, action) => {
   return state;
 }
 
-const calculateMealEstimate = (eventType, guests) => {
-  return thanksgivingEstimate(guests);
+let calculateMealEstimate = (eventType, guests) => {
+  let result;
+  alert(eventType);
+  if (eventType === 'thanksgiving') {
+    result = thanksgivingEstimate(guests);
+  }
+  else result = easterEstimate(guests);
+
+  return result;
 }
 
-const easterEstimate = (guests) => {
+let easterEstimate = (guests) => {
   return {food: `${guests*1} lbs of food for rabbit`, drinks: `${guests*1} per hour`};
 }
 
-const thanksgivingEstimate = (guests) => {
+let thanksgivingEstimate = (guests) => {
   return {food: `${guests*1} lbs of food for thanks`, drinks: `${guests*1} per hour`};
 }
